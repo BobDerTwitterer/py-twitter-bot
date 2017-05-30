@@ -9,6 +9,8 @@ def reply(tweet):
     """Return text to be used as a reply"""
     message = tweet['text']
     user = tweet['user']['screen_name']
+    if message.startswith('@bob_der_bot'):
+        message = message.split(' ',1)[1]
     if "+" in message:
         arguments = message.split('+')
         number1 = int(arguments[0])
