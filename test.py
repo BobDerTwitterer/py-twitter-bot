@@ -20,6 +20,10 @@ class TestTweetText(unittest.TestCase):
        response = reply({'text': '1+1', 'user': {'screen_name': 'TestUser'}})
        self.assertTrue("2" in response)
 
+    def test_math2(self):
+       response = reply({'text': '1+2', 'user': {'screen_name': 'TestUser'}})
+       self.assertTrue("3" in response)
+
     def test_pok1(self):
        response = reply({'text': 'Which Pokemon is #1', 'user': {'screen_name': 'TestUser'}})
        self.assertTrue("Bulbasaur" in response)

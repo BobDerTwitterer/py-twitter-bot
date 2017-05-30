@@ -9,8 +9,11 @@ def reply(tweet):
     """Return text to be used as a reply"""
     message = tweet['text']
     user = tweet['user']['screen_name']
-    if "1+1" in message:
-        return "2"
+    if "+" in message:
+        arguments = message.split('+')
+        number1 = int(arguments[0])
+        number2 = int(arguments[1])
+        return str(number1 + number2)
     if "Which Pokemon is #1" in message:
         return "Digga Bulbasaur"
     return "false"
